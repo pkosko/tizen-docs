@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
-<meta data-version="10.1" data-profile="tv">
+<meta data-version="11.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
@@ -36,7 +36,7 @@ Act as a GATT client (Generic Attribute Profile client)          </li>
 Configure the local GATT server (Generic Attribute Profile)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="https://samsungtizenos.com/docs/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -55,28 +55,34 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
                     1.3. <a href="#BluetoothSocketState">BluetoothSocketState</a>
 </li>
 <li>
-                    1.4. <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>
+                    1.4. <a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a>
 </li>
 <li>
-                    1.5. <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a>
+                    1.5. <a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a>
 </li>
 <li>
-                    1.6. <a href="#BluetoothAdvertisingState">BluetoothAdvertisingState</a>
+                    1.6. <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>
 </li>
 <li>
-                    1.7. <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>
+                    1.7. <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a>
 </li>
 <li>
-                    1.8. <a href="#Bytes">Bytes</a>
+                    1.8. <a href="#BluetoothAdvertisingState">BluetoothAdvertisingState</a>
 </li>
 <li>
-                    1.9. <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>
+                    1.9. <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>
 </li>
 <li>
-                    1.10. <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>
+                    1.10. <a href="#Bytes">Bytes</a>
 </li>
 <li>
-                    1.11. <a href="#BluetoothGATTDescriptorVariant">BluetoothGATTDescriptorVariant</a>
+                    1.11. <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>
+</li>
+<li>
+                    1.12. <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>
+</li>
+<li>
+                    1.13. <a href="#BluetoothGATTDescriptorVariant">BluetoothGATTDescriptorVariant</a>
 </li>
 </ul>
 </li>
@@ -155,13 +161,15 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 </li>
 <li>2.37. <a href="#BluetoothDeviceSuccessCallback">BluetoothDeviceSuccessCallback</a>
 </li>
-<li>2.38. <a href="#BluetoothDeviceArraySuccessCallback">BluetoothDeviceArraySuccessCallback</a>
+<li>2.38. <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>
 </li>
-<li>2.39. <a href="#BluetoothDiscoverDevicesSuccessCallback">BluetoothDiscoverDevicesSuccessCallback</a>
+<li>2.39. <a href="#BluetoothDeviceArraySuccessCallback">BluetoothDeviceArraySuccessCallback</a>
 </li>
-<li>2.40. <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>
+<li>2.40. <a href="#BluetoothDiscoverDevicesSuccessCallback">BluetoothDiscoverDevicesSuccessCallback</a>
 </li>
-<li>2.41. <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a>
+<li>2.41. <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>
+</li>
+<li>2.42. <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a>
 </li>
 </ul>
 </li>
@@ -353,7 +361,12 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 </tr>
 <tr>
 <td><a href="#BluetoothDevice">BluetoothDevice</a></td>
-<td><div>void <a href="#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
+<td>
+<div>void <a href="#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothDevice::audioConnect">audioConnect</a> (<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothDevice::audioDisconnect">audioDisconnect</a> (<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>boolean <a href="#BluetoothDevice::isProfileConnected">isProfileConnected</a> (<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#BluetoothLEDevice">BluetoothLEDevice</a></td>
@@ -412,6 +425,10 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <tr>
 <td><a href="#BluetoothDeviceSuccessCallback">BluetoothDeviceSuccessCallback</a></td>
 <td><div>void <a href="#BluetoothDeviceSuccessCallback::onsuccess">onsuccess</a> (<a href="#BluetoothDevice">BluetoothDevice</a> device)</div></td>
+</tr>
+<tr>
+<td><a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a></td>
+<td><div>void <a href="#BluetoothAudioSuccessCallback::onsuccess">onsuccess</a> (<a href="#BluetoothAddress">BluetoothAddress</a> address, <a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, boolean connected)</div></td>
 </tr>
 <tr>
 <td><a href="#BluetoothDeviceArraySuccessCallback">BluetoothDeviceArraySuccessCallback</a></td>
@@ -496,8 +513,64 @@ OPEN - corresponds to opened bluetooth socket.            </li>
           </ul>
          </div>
 </div>
+<div class="enum" id="BluetoothAudioProfileType">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAudioProfileType"></a><h3>1.4. BluetoothAudioProfileType</h3>
+<div class="brief">
+ Specifies the Bluetooth audio profile type.
+          </div>
+<pre class="webidl prettyprint">  enum BluetoothAudioProfileType { "HSP_HFP", "A2DP", "AG", "A2DP_SINK", "ALL" };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <ul>
+            <li>
+HSP_HFP - Headset Profile/Hands-Free Profile (local device AG and remote device HF Client)            </li>
+            <li>
+A2DP - Advanced Audio Distribution Profile Source Connection (remote device is A2DP Sink)            </li>
+            <li>
+AG - Audio Gateway (local device HF Client and remote device AG)            </li>
+            <li>
+A2DP_SINK - Advanced Audio Distribution Profile Sink Connection (remote device is A2DP Source)            </li>
+            <li>
+ALL - All supported profiles related with audio (Both Host and Device role)            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="BluetoothConnectionProfileType">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothConnectionProfileType"></a><h3>1.5. BluetoothConnectionProfileType</h3>
+<div class="brief">
+ Specifies the Bluetooth connection profile type.
+          </div>
+<pre class="webidl prettyprint">  enum BluetoothConnectionProfileType { "RFCOMM", "A2DP", "HSP", "HID", "NAP", "AG", "GATT", "NAP_SERVER", "A2DP_SINK" };</pre>
+<p><span class="version">Since: </span>
+ 10.1
+          </p>
+<div class="description">
+          <ul>
+            <li>
+RFCOMM - RFCOMM profile            </li>
+            <li>
+A2DP - Advanced Audio Distribution Profile            </li>
+            <li>
+HSP - Headset Profile            </li>
+            <li>
+HID - Human Interface Device Profile            </li>
+            <li>
+NAP - Network Access Profile            </li>
+            <li>
+AG - Audio Gateway Profile            </li>
+            <li>
+GATT - Generic Attribute Profile            </li>
+            <li>
+NAP_SERVER - Network Access Profile Server            </li>
+            <li>
+A2DP_SINK - Advanced Audio Distribution Profile Sink            </li>
+          </ul>
+         </div>
+</div>
 <div class="typedef" id="BluetoothLESolicitationUUID">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLESolicitationUUID"></a><h3>1.4. BluetoothLESolicitationUUID</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLESolicitationUUID"></a><h3>1.6. BluetoothLESolicitationUUID</h3>
 <div class="brief">
  The service solicitation UUID of the Bluetooth LE device.
           </div>
@@ -506,12 +579,12 @@ OPEN - corresponds to opened bluetooth socket.            </li>
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- <em>BluetoothLESolicitationUUID</em> is an alias for <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a>. Values of both types can take the same 16-bit, 32-bit or 128-bit forms.
-Functions taking <em>BluetoothLESolicitationUUID</em> parameters will accept the same UUID formats as those accepting <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> values.
+ <em>BluetoothLESolicitationUUID</em> is an alias for <a href="bluetooth#BluetoothUUID">BluetoothUUID</a>. Values of both types can take the same 16-bit, 32-bit or 128-bit forms.
+Functions taking <em>BluetoothLESolicitationUUID</em> parameters will accept the same UUID formats as those accepting <a href="bluetooth#BluetoothUUID">BluetoothUUID</a> values.
           </p>
 </div>
 <div class="enum" id="BluetoothAdvertisePacketType">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisePacketType"></a><h3>1.5. BluetoothAdvertisePacketType</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisePacketType"></a><h3>1.7. BluetoothAdvertisePacketType</h3>
 <div class="brief">
  The Bluetooth LE packet type.
           </div>
@@ -529,7 +602,7 @@ SCAN_RESPONSE- the scan response packet            </li>
          </div>
 </div>
 <div class="enum" id="BluetoothAdvertisingState">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisingState"></a><h3>1.6. BluetoothAdvertisingState</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisingState"></a><h3>1.8. BluetoothAdvertisingState</h3>
 <div class="brief">
  The Bluetooth advertising state.
           </div>
@@ -547,7 +620,7 @@ STOPPED - advertising has stopped            </li>
          </div>
 </div>
 <div class="enum" id="BluetoothAdvertisingMode">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisingMode"></a><h3>1.7. BluetoothAdvertisingMode</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisingMode"></a><h3>1.9. BluetoothAdvertisingMode</h3>
 <div class="brief">
  The Bluetooth advertising mode.
           </div>
@@ -567,7 +640,7 @@ LOW_ENERGY - Low energy advertising mode            </li>
          </div>
 </div>
 <div class="typedef" id="Bytes">
-<a class="backward-compatibility-anchor" name="::Bluetooth::Bytes"></a><h3>1.8. Bytes</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::Bytes"></a><h3>1.10. Bytes</h3>
 <div class="brief">
  The Bytes type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a <em>byte[]</em> or a <em>DOMString</em> or a <em>Uint8Array</em>.
           </div>
@@ -577,7 +650,7 @@ LOW_ENERGY - Low energy advertising mode            </li>
           </p>
 </div>
 <div class="typedef" id="BluetoothGATTServiceVariant">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServiceVariant"></a><h3>1.9. BluetoothGATTServiceVariant</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServiceVariant"></a><h3>1.11. BluetoothGATTServiceVariant</h3>
 <div class="brief">
  The type of objects which are either <a href="#BluetoothGATTService">BluetoothGATTService</a> or <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>, depending on the context in which they appear.
           </div>
@@ -587,7 +660,7 @@ LOW_ENERGY - Low energy advertising mode            </li>
           </p>
 </div>
 <div class="typedef" id="BluetoothGATTCharacteristicVariant">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTCharacteristicVariant"></a><h3>1.10. BluetoothGATTCharacteristicVariant</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTCharacteristicVariant"></a><h3>1.12. BluetoothGATTCharacteristicVariant</h3>
 <div class="brief">
  The type of objects which are either <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> or <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>, depending on the context in which they appear.
           </div>
@@ -597,7 +670,7 @@ LOW_ENERGY - Low energy advertising mode            </li>
           </p>
 </div>
 <div class="typedef" id="BluetoothGATTDescriptorVariant">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptorVariant"></a><h3>1.11. BluetoothGATTDescriptorVariant</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptorVariant"></a><h3>1.13. BluetoothGATTDescriptorVariant</h3>
 <div class="brief">
  The type of objects which are either <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> or <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>, depending on the context in which they appear.
           </div>
@@ -932,7 +1005,7 @@ advertise.solicitationuuids = ["180f", "7cae86d2-a021-11ea-bb37-0242ac130002"];
             </div>
 <div class="description">
             <p>
-See the <a href="https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
+See the <a href="https://www.bluetooth.com/specifications/assigned-numbers/">list of appearance codes</a> for sample values.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -1143,7 +1216,7 @@ catch (err)
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- To check if this method is supported or not, use <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability</a>("http://tizen.org/feature/network.bluetooth.le").
+ To check if this method is supported or not, use <a href="systeminfo#SystemInfo::getCapability">tizen.systeminfo.getCapability</a>("http://tizen.org/feature/network.bluetooth.le").
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
@@ -2973,10 +3046,10 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- Values of <a href="bluetooth.html#BluetoothLEAdvertiseData::uuids">service UUIDs</a> and <a href="bluetooth.html#BluetoothLEAdvertiseData::solicitationuuids">solicitation UUIDs</a> may be converted to one of equivalent formats defined in <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> before advertising. Consult the documentation of these fields for more information.
+ Values of <a href="bluetooth#BluetoothLEAdvertiseData::uuids">service UUIDs</a> and <a href="bluetooth#BluetoothLEAdvertiseData::solicitationuuids">solicitation UUIDs</a> may be converted to one of equivalent formats defined in <a href="bluetooth#BluetoothUUID">BluetoothUUID</a> before advertising. Consult the documentation of these fields for more information.
             </p>
 <p><span class="remark">Remark: </span>
- Consult the documentation of <a href="bluetooth.html#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> for the information about the UUID format of service data that can be advertised.
+ Consult the documentation of <a href="bluetooth#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> for the information about the UUID format of service data that can be advertised.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3651,7 +3724,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3747,7 +3820,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3844,7 +3917,7 @@ adapter.startScan(function onsuccess(device)
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3926,10 +3999,10 @@ Calling this function has no effect if there is no listener with given id.
             </p>
            </div>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> code example.
             </p>
 <p><span class="remark">Remark: </span>
- Value change listeners cannot be registered and thus unregistered for <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects. An attempt to remove value change listener for such an object will result in no operation.
+ Value change listeners cannot be registered and thus unregistered for <a href="bluetooth#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects. An attempt to remove value change listener for such an object will result in no operation.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4469,7 +4542,7 @@ The ErrorCallback is launched with these error types:
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4566,7 +4639,7 @@ UnknownError - If any other error occurs              </li>
  http://tizen.org/privilege/bluetooth
             </p>
 <p><span class="remark">Remark: </span>
- <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+ <a href="bluetooth#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -5471,7 +5544,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEAdapter::startScan">startScan</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEAdapter::startScan">startScan</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -5511,7 +5584,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEAdapter::startAdvertise">startAdvertise</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEAdapter::startAdvertise">startAdvertise</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -5553,7 +5626,7 @@ server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothLEDevice::addConnectStateChangeListener">addConnectStateChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothLEDevice::addConnectStateChangeListener">addConnectStateChangeListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -5942,6 +6015,11 @@ If the callback does not return a <a href="#GATTRequestReply">GATTRequestReply</
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>[] uuids;
     void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isProfileConnected(<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  6.0
@@ -6266,6 +6344,304 @@ function onDeviceReady(device)
   {
     console.log("Chat service is not supported by this device");
   }
+}
+
+/* Execution. */
+
+if (adapter.powered)
+{
+  console.log("Bluetooth is already enabled");
+  adapter.getDevice("35:F4:59:D1:7A:03", onDeviceReady, function(e)
+  {
+    console.log("Error: " + e.message);
+  });
+}
+else
+{
+  console.log("Try to launch the Bluetooth Settings application");
+  tizen.application.launchAppControl(
+      bluetoothSwitchAppControl, null, launchSuccess, launchError, serviceReply);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothDevice::audioConnect">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDevice::audioConnect"></a><code><b><span class="methodName">audioConnect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Connects to a remote Bluetooth audio device with the specified audio profile type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method initiates the process of establishing an audio connection to a bonded remote device using the specified audio profile.
+The remote device must be bonded with the local device before calling this method.
+            </p>
+            <p>
+When the connection request succeeds, the <em>successCallback</em> is invoked with connection information.
+While connecting with <em>ALL</em> as a profile type, success callback will be called twice (for <em>HSP_HFP</em> and <em>A2DP</em>).
+            </p>
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileType</span>:
+     Type of audio profile to use for the connection.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function that is called when an asynchronous call completes successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getDefaultAdapter();
+function onAudioConnectSuccess(address, profileType, connected)
+{
+  console.log("Connected device: " + address);
+  console.log("Profile type: " + profileType);
+  console.log("Connected: " + connected);
+}
+
+function onError(e)
+{
+  console.log("Could not connect to audio device, reason: " + e.message);
+}
+
+function onDeviceReady(device)
+{
+  /* device needs to be bonded first */
+  device.audioConnect("A2DP", onAudioConnectSuccess, onError);
+}
+
+/* Execution. */
+
+if (adapter.powered)
+{
+  console.log("Bluetooth is already enabled");
+  adapter.getDevice("35:F4:59:D1:7A:03", onDeviceReady, function(e)
+  {
+    console.log("Error: " + e.message);
+  });
+}
+else
+{
+  console.log("Try to launch the Bluetooth Settings application");
+  tizen.application.launchAppControl(
+      bluetoothSwitchAppControl, null, launchSuccess, launchError, serviceReply);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothDevice::audioDisconnect">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDevice::audioDisconnect"></a><code><b><span class="methodName">audioDisconnect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Disconnects from a remote Bluetooth audio device with the specified audio profile type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method initiates the process of terminating an audio connection to a connected remote device using the specified audio profile.
+The remote device must be connected before calling this method.
+            </p>
+            <p>
+When the disconnection request succeeds, the <em>successCallback</em> is invoked with connection information.
+            </p>
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileType</span>:
+     Type of audio profile to disconnect.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when an asynchronous call completes successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getDefaultAdapter();
+function onAudioDisconnectSuccess(address, profileType, connected)
+{
+  console.log("Disconnected device: " + address);
+  console.log("Profile type: " + profileType);
+  console.log("Connected: " + connected);
+}
+
+function onError(e)
+{
+  console.log("Could not disconnect from audio device, reason: " + e.message);
+}
+
+function onDeviceReady(device)
+{
+  /* device needs to be bonded first */
+  device.audioDisconnect("A2DP", onAudioDisconnectSuccess, onError);
+}
+
+/* Execution. */
+
+if (adapter.powered)
+{
+  console.log("Bluetooth is already enabled");
+  adapter.getDevice("35:F4:59:D1:7A:03", onDeviceReady, function(e)
+  {
+    console.log("Error: " + e.message);
+  });
+}
+else
+{
+  console.log("Try to launch the Bluetooth Settings application");
+  tizen.application.launchAppControl(
+      bluetoothSwitchAppControl, null, launchSuccess, launchError, serviceReply);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothDevice::isProfileConnected">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDevice::isProfileConnected"></a><code><b><span class="methodName">isProfileConnected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether a specific Bluetooth profile is connected to the remote device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isProfileConnected(<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType);</pre></div>
+<p><span class="version">Since: </span>
+ 10.1
+            </p>
+<div class="description">
+            <p>
+This method returns the connection status of the specified Bluetooth profile for the bonded remote device.
+The remote device must be bonded with the local device before calling this method.
+            </p>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">profileType</span>:
+     Type of Bluetooth profile to check.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var> if the specified profile is connected, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if a Bluetooth device is turned off.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getDefaultAdapter();
+function onDeviceReady(device)
+{
+  /* device needs to be bonded first */
+  var isConnected = device.isProfileConnected("A2DP");
+  console.log("A2DP profile connected: " + isConnected);
 }
 
 /* Execution. */
@@ -8382,7 +8758,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::setChangeListener">setChangeListener</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::setChangeListener">setChangeListener</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8465,7 +8841,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::getDevice">getDevice</a> and <a href="bluetooth.html#BluetoothAdapter::createBonding">createBonding</a> code examples.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::getDevice">getDevice</a> and <a href="bluetooth#BluetoothAdapter::createBonding">createBonding</a> code examples.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8494,8 +8870,57 @@ function unRegisterChatService()
 </dl>
 </div>
 </div>
+<div class="interface" id="BluetoothAudioSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAudioSuccessCallback"></a><h3>2.38. BluetoothAudioSuccessCallback</h3>
+<div class="brief">
+ The BluetoothAudioSuccessCallback interface implements the success callback for <a href="#BluetoothAdapter::audioConnect">BluetoothAdapter.audioConnect()</a> and <a href="#BluetoothAdapter::audioDisconnect">BluetoothAdapter.audioDisconnect()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothAudioSuccessCallback {
+    void onsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> address, <a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, boolean connected);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<p><span class="remark">Remark: </span>
+ Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::audioConnect">audioConnect</a> and <a href="bluetooth.html#BluetoothAdapter::audioDisconnect">audioDisconnect</a> code examples.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BluetoothAudioSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAudioSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the audio connect/disconnect operation is successful.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> address, <a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, boolean connected);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">address</span>:
+      The MAC address of the remote device.
+                </li>
+          <li class="param">
+<span class="name">profileType</span>:
+  The audio profile type used for the operation.
+                </li>
+          <li class="param">
+<span class="name">connected</span>:
+    <var>true</var> if connected, <var>false</var> if disconnected.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="BluetoothDeviceArraySuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceArraySuccessCallback"></a><h3>2.38. BluetoothDeviceArraySuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceArraySuccessCallback"></a><h3>2.39. BluetoothDeviceArraySuccessCallback</h3>
 <div class="brief">
  The BluetoothDeviceArraySuccessCallback interface that defines the success callback for <a href="#BluetoothAdapter::getKnownDevices">BluetoothAdapter.getKnownDevices()</a>.
           </div>
@@ -8506,7 +8931,7 @@ function unRegisterChatService()
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::getKnownDevices">getKnownDevices</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::getKnownDevices">getKnownDevices</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8537,7 +8962,7 @@ Each element is a BluetoothDevice.
 </div>
 </div>
 <div class="interface" id="BluetoothDiscoverDevicesSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDiscoverDevicesSuccessCallback"></a><h3>2.39. BluetoothDiscoverDevicesSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDiscoverDevicesSuccessCallback"></a><h3>2.40. BluetoothDiscoverDevicesSuccessCallback</h3>
 <div class="brief">
  The BluetoothDiscoverDevicesSuccessCallback interface that defines the success callback for <a href="#BluetoothAdapter::discoverDevices">BluetoothAdapter.discoverDevices()</a>.
           </div>
@@ -8551,7 +8976,7 @@ Each element is a BluetoothDevice.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::discoverDevices">discoverDevices</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::discoverDevices">discoverDevices</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8636,7 +9061,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface" id="BluetoothSocketSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocketSuccessCallback"></a><h3>2.40. BluetoothSocketSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocketSuccessCallback"></a><h3>2.41. BluetoothSocketSuccessCallback</h3>
 <div class="brief">
  The BluetoothSocketSuccessCallback interface that defines the success method for <a href="#BluetoothDevice::connectToServiceByUUID">BluetoothDevice.connectToServiceByUUID()</a>.
           </div>
@@ -8647,7 +9072,7 @@ After that, this device is no longer visible.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8677,7 +9102,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface" id="BluetoothServiceSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceSuccessCallback"></a><h3>2.41. BluetoothServiceSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceSuccessCallback"></a><h3>2.42. BluetoothServiceSuccessCallback</h3>
 <div class="brief">
  The BluetoothServiceSuccessCallback interface implements the success callback for <a href="#BluetoothAdapter::registerRFCOMMServiceByUUID">BluetoothAdapter.registerRFCOMMServiceByUUID()</a>.
           </div>
@@ -8688,7 +9113,7 @@ After that, this device is no longer visible.
  6.0
           </p>
 <p><span class="remark">Remark: </span>
- Example of using can be find at <a href="bluetooth.html#BluetoothAdapter::registerRFCOMMServiceByUUID">registerRFCOMMServiceByUUID</a> code example.
+ Example of using can be find at <a href="bluetooth#BluetoothAdapter::registerRFCOMMServiceByUUID">registerRFCOMMServiceByUUID</a> code example.
           </p>
 <div class="methods">
 <h4>Methods</h4>
@@ -8756,7 +9181,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le.gatt.server</li>
 </div>
 <p></p>
-                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
+                    For more information, see <a href="https://samsungtizenos.com/docs/application/web/reference/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {
@@ -8768,6 +9193,8 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   typedef (<a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> or <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>) BluetoothGATTCharacteristicVariant;
   typedef (<a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> or <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>) BluetoothGATTDescriptorVariant;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
+  enum BluetoothAudioProfileType { "HSP_HFP", "A2DP", "AG", "A2DP_SINK", "ALL" };
+  enum BluetoothConnectionProfileType { "RFCOMM", "A2DP", "HSP", "HID", "NAP", "AG", "GATT", "NAP_SERVER", "A2DP_SINK" };
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
   enum BluetoothAdvertisingMode { "BALANCED", "LOW_LATENCY", "LOW_ENERGY" };
@@ -9014,6 +9441,11 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>[] uuids;
     void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioConnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void audioDisconnect(<a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, optional <a href="#BluetoothAudioSuccessCallback">BluetoothAudioSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isProfileConnected(<a href="#BluetoothConnectionProfileType">BluetoothConnectionProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothLEDevice {
     readonly attribute <a href="#BluetoothAddress">BluetoothAddress</a> address;
@@ -9165,6 +9597,9 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothDeviceSuccessCallback {
     void onsuccess(<a href="#BluetoothDevice">BluetoothDevice</a> device);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothAudioSuccessCallback {
+    void onsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> address, <a href="#BluetoothAudioProfileType">BluetoothAudioProfileType</a> profileType, boolean connected);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothDeviceArraySuccessCallback {
     void onsuccess(<a href="#BluetoothDevice">BluetoothDevice</a>[] devices);
