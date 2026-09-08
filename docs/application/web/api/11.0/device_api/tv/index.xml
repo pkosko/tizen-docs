@@ -1,80 +1,82 @@
 <?xml version="1.0" ?>
-<tizen-api version="10.0">
+<tizen-api version="11.0">
 	<tizen-api profile="tv">
-		<!-- 10.0 tv web -->
-		<topic label="10.0 Web Application" href="10.0/device_api/tv/index.html" invisible-node="true">
-			<topic label="Tizen Web Device API Reference" href="10.0/device_api/tv/index.html">
-				<topic label="Tv Web" href="10.0/device_api/tv/index.html" invisible-node="true">
-					<topic href="10.0/device_api/tv/index.html#Base" label="Base">
-						<topic href="10.0/device_api/tv/tizen/archive.html" label="Archive"/>
-						<topic href="10.0/device_api/tv/tizen/filesystem.html" label="Filesystem"/>
-						<topic href="10.0/device_api/tv/tizen/tizen.html" label="Tizen"/>
+		<!-- 11.0 tv web -->
+		<topic label="11.0 Web Application" href="11.0/device_api/tv/index.html" invisible-node="true">
+			<topic label="Tizen Web Device API Reference" href="11.0/device_api/tv/index.html">
+				<topic label="Tv Web" href="11.0/device_api/tv/index.html" invisible-node="true">
+					<topic href="11.0/device_api/tv/index.html#Base" label="Base">
+						<topic href="11.0/device_api/tv/tizen/archive.html" label="Archive"/>
+						<topic href="11.0/device_api/tv/tizen/filesystem.html" label="Filesystem"/>
+						<topic href="11.0/device_api/tv/tizen/tizen.html" label="Tizen"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Account" label="Account">
-						<topic href="10.0/device_api/tv/tizen/account.html" label="Account"/>
+					<topic href="11.0/device_api/tv/index.html#Account" label="Account">
+						<topic href="11.0/device_api/tv/tizen/account.html" label="Account"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Application Framework" label="Application Framework">
-						<topic href="10.0/device_api/tv/tizen/alarm.html" label="Alarm"/>
-						<topic href="10.0/device_api/tv/tizen/application.html" label="Application"/>
-						<topic href="10.0/device_api/tv/tizen/datacontrol.html" label="Data Control"/>
-						<topic href="10.0/device_api/tv/tizen/messageport.html" label="Message Port"/>
-						<topic href="10.0/device_api/tv/tizen/package.html" label="Package"/>
+					<topic href="11.0/device_api/tv/index.html#Application Framework" label="Application Framework">
+						<topic href="11.0/device_api/tv/tizen/alarm.html" label="Alarm"/>
+						<topic href="11.0/device_api/tv/tizen/application.html" label="Application"/>
+						<topic href="11.0/device_api/tv/tizen/datacontrol.html" label="Data Control"/>
+						<topic href="11.0/device_api/tv/tizen/messageport.html" label="Message Port"/>
+						<topic href="11.0/device_api/tv/tizen/package.html" label="Package"/>
+						<topic href="11.0/device_api/tv/tizen/rpcport.html" label="RPC Port"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Content" label="Content">
-						<topic href="10.0/device_api/tv/tizen/content.html" label="Content"/>
-						<topic href="10.0/device_api/tv/tizen/download.html" label="Download"/>
+					<topic href="11.0/device_api/tv/index.html#Content" label="Content">
+						<topic href="11.0/device_api/tv/tizen/content.html" label="Content"/>
+						<topic href="11.0/device_api/tv/tizen/download.html" label="Download"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Machine Learning" label="Machine Learning">
-						<topic href="10.0/device_api/tv/tizen/ml.html" label="Machine Learning"/>
-						<topic href="10.0/device_api/tv/tizen/ml_single.html" label="Single"/>
-						<topic href="10.0/device_api/tv/tizen/ml_pipeline.html" label="Pipeline"/>
-						<topic href="10.0/device_api/tv/tizen/ml_trainer.html" label="Trainer"/>
+					<topic href="11.0/device_api/tv/index.html#Machine Learning" label="Machine Learning">
+						<topic href="11.0/device_api/tv/tizen/ml.html" label="Machine Learning"/>
+						<topic href="11.0/device_api/tv/tizen/ml_single.html" label="Single"/>
+						<topic href="11.0/device_api/tv/tizen/ml_pipeline.html" label="Pipeline"/>
+						<topic href="11.0/device_api/tv/tizen/ml_trainer.html" label="Trainer"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Messaging" label="Messaging">
-						<topic href="10.0/device_api/tv/tizen/push.html" label="Push"/>
+					<topic href="11.0/device_api/tv/index.html#Messaging" label="Messaging">
+						<topic href="11.0/device_api/tv/tizen/push.html" label="Push"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Multimedia" label="Multimedia">
-						<topic href="10.0/device_api/tv/tizen/exif.html" label="Exif"/>
-						<topic href="10.0/device_api/tv/tizen/mediacontroller.html" label="Media Controller"/>
-						<topic href="10.0/device_api/tv/tizen/metadata.html" label="Metadata"/>
+					<topic href="11.0/device_api/tv/index.html#Multimedia" label="Multimedia">
+						<topic href="11.0/device_api/tv/tizen/exif.html" label="Exif"/>
+						<topic href="11.0/device_api/tv/tizen/mediacontroller.html" label="Media Controller"/>
+						<topic href="11.0/device_api/tv/tizen/metadata.html" label="Metadata"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Network" label="Network">
-						<topic href="10.0/device_api/tv/tizen/bluetooth.html" label="Bluetooth"/>
-						<topic href="10.0/device_api/tv/tizen/iotcon.html" label="Iotcon"/>
+					<topic href="11.0/device_api/tv/index.html#Network" label="Network">
+						<topic href="11.0/device_api/tv/tizen/bluetooth.html" label="Bluetooth"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Security" label="Security">
-						<topic href="10.0/device_api/tv/tizen/keymanager.html" label="Keymanager"/>
+					<topic href="11.0/device_api/tv/index.html#Security" label="Security">
+						<topic href="11.0/device_api/tv/tizen/keymanager.html" label="Keymanager"/>
+						<topic href="11.0/device_api/tv/tizen/ppm.html" label="PrivacyPrivilege"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#System" label="System">
-						<topic href="10.0/device_api/tv/tizen/systeminfo.html" label="System Information"/>
-						<topic href="10.0/device_api/tv/tizen/time.html" label="Time"/>
-						<topic href="10.0/device_api/tv/tizen/websetting.html" label="Web Setting"/>
+					<topic href="11.0/device_api/tv/index.html#System" label="System">
+						<topic href="11.0/device_api/tv/tizen/systeminfo.html" label="System Information"/>
+						<topic href="11.0/device_api/tv/tizen/time.html" label="Time"/>
+						<topic href="11.0/device_api/tv/tizen/websetting.html" label="Web Setting"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#UIX" label="UIX">
-						<topic href="10.0/device_api/tv/tizen/voicecontrol.html" label="Voice Control"/>
+					<topic href="11.0/device_api/tv/index.html#UIX" label="UIX">
+						<topic href="11.0/device_api/tv/tizen/voicecontrol.html" label="Voice Control"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#TV Controls" label="TV Controls">
-						<topic href="10.0/device_api/tv/tizen/tvaudiocontrol.html" label="TV Audio Control"/>
-						<topic href="10.0/device_api/tv/tizen/tvdisplaycontrol.html" label="TV Display Control"/>
-						<topic href="10.0/device_api/tv/tizen/tvinfo.html" label="TV Information"/>
-						<topic href="10.0/device_api/tv/tizen/tvinputdevice.html" label="TV Input Device"/>
-						<topic href="10.0/device_api/tv/tizen/tvwindow.html" label="TV Window"/>
+					<topic href="11.0/device_api/tv/index.html#TV Controls" label="TV Controls">
+						<topic href="11.0/device_api/tv/tizen/tvaudiocontrol.html" label="TV Audio Control"/>
+						<topic href="11.0/device_api/tv/tizen/tvdisplaycontrol.html" label="TV Display Control"/>
+						<topic href="11.0/device_api/tv/tizen/tvinfo.html" label="TV Information"/>
+						<topic href="11.0/device_api/tv/tizen/tvinputdevice.html" label="TV Input Device"/>
+						<topic href="11.0/device_api/tv/tizen/tvwindow.html" label="TV Window"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Cordova" label="Cordova">
-						<topic href="10.0/device_api/tv/tizen/cordova/console.html" label="Console"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/cordova.html" label="Cordova"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/device.html" label="Device"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/device-motion.html" label="Device Motion"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/dialogs.html" label="Dialogs"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/events.html" label="Events"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/file.html" label="File"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/filetransfer.html" label="File Transfer"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/globalization.html" label="Globalization"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/media.html" label="Media"/>
-						<topic href="10.0/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information"/>
+					<topic href="11.0/device_api/tv/index.html#Cordova" label="Cordova">
+						<topic href="11.0/device_api/tv/tizen/cordova/console.html" label="Console"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/cordova.html" label="Cordova"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/device.html" label="Device"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/device-motion.html" label="Device Motion"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/dialogs.html" label="Dialogs"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/events.html" label="Events"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/file.html" label="File"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/filetransfer.html" label="File Transfer"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/globalization.html" label="Globalization"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/media.html" label="Media"/>
+						<topic href="11.0/device_api/tv/tizen/cordova/networkInformation.html" label="Network Information"/>
 					</topic>
-					<topic href="10.0/device_api/tv/index.html#Deprecated API" label="Deprecated API">
-						<topic href="10.0/device_api/tv/tizen/libteec.html" label="LibTeec" deprecatedSince="6.5"/>
+					<topic href="11.0/device_api/tv/index.html#Deprecated API" label="Deprecated API">
+						<topic href="11.0/device_api/tv/tizen/iotcon.html" label="Iotcon" deprecatedSince="10.0"/>
+						<topic href="11.0/device_api/tv/tizen/libteec.html" label="LibTeec" deprecatedSince="6.5"/>
 					</topic>
 				</topic>
 			</topic>
@@ -158,7 +160,7 @@
 				</topic>
 			</topic>
 		</topic>
-		<!-- 10.0 tv native -->
-		<!--====================== 10.0 Native API section here ======================-->
+		<!-- 11.0 tv native -->
+		<!--====================== 11.0 Native API section here ======================-->
 	</tizen-api>
 </tizen-api>
